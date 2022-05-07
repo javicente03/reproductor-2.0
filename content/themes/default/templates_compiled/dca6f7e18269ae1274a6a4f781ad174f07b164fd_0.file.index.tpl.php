@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2022-05-06 23:19:26
+/* Smarty version 3.1.40, created on 2022-05-07 06:55:53
   from 'C:\xampp\htdocs\reproductor\content\themes\default\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6275acfe7ba454_95863271',
+  'unifunc' => 'content_627617f94ce899_96984501',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dca6f7e18269ae1274a6a4f781ad174f07b164fd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\reproductor\\content\\themes\\default\\templates\\index.tpl',
-      1 => 1651879158,
+      1 => 1651906551,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:_footer_radio.tpl' => 1,
   ),
 ),false)) {
-function content_6275acfe7ba454_95863271 (Smarty_Internal_Template $_smarty_tpl) {
+function content_627617f94ce899_96984501 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:_head_radio.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -56,18 +56,20 @@ $_smarty_tpl->_subTemplateRender('file:_head_radio.tpl', $_smarty_tpl->cache_id,
       <div class="account"><i class="material-icons">notifications_none</i><img class="avatar" src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/350523/profile/profile-80.jpg?1"/></div>
       <div class="row">
         <h1>Featured Albums</h1>
+        <?php if ($_smarty_tpl->tpl_vars['playlist']->value) {?>
         <button class="play"><span>PLAY</span><i class="material-icons">play_arrow</i></button>
+        <?php }?>
       </div>
       <div class="albums">
         <div class="music-player-container is-playing">
           <div class="music-player">
             <div class="player-content-container">
-              <h1 class="artist-name">Incubus</h1>
-              <h2 class="album-title">Make Yourself</h2>
-              <h3 class="song-title">"Stellar"</h3>
+              <h1 class="artist-name"></h1>
+              <h2 class="album-title"></h2>
+              <h3 class="song-title"></h3>
               <div class="music-player-controls">
                 <div class="control-back"></div>
-                <div class="control-play"></div>
+                <div class="control-play" data-status="0"></div>
                 <div class="control-forwards"></div>
               </div>
             </div>
@@ -86,13 +88,35 @@ $_smarty_tpl->_subTemplateRender('file:_head_radio.tpl', $_smarty_tpl->cache_id,
 ?>    
         </div>
 
-        <div id="mp3_player">
+        
+        <div id="mp3_player">        
           <canvas id="analyzer_render"></canvas>
           <div id="audio_box"></div>
         </div>
       </div>
     </div>
   </div>
+
+
+<?php echo '<script'; ?>
+>
+  var arraySong = new Array();
+
+  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['playlist']->value, 'row');
+$_smarty_tpl->tpl_vars['row']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
+$_smarty_tpl->tpl_vars['row']->do_else = false;
+?>
+      arraySong.push(<?php echo $_smarty_tpl->tpl_vars['row']->value['song_id'];?>
+)
+  <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+  
+<?php echo '</script'; ?>
+>
+
 
 <?php $_smarty_tpl->_subTemplateRender('file:_footer_radio.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 echo '<script'; ?>

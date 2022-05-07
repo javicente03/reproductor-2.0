@@ -15,5 +15,4 @@
 			<div class="error-panel">Error</div>
 			<div class="success-panel">Success</div>
 	<div>
-	
 </div>

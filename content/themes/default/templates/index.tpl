@@ -29,18 +29,20 @@
       <div class="account"><i class="material-icons">notifications_none</i><img class="avatar" src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/350523/profile/profile-80.jpg?1"/></div>
       <div class="row">
         <h1>Featured Albums</h1>
+        {if $playlist}
         <button class="play"><span>PLAY</span><i class="material-icons">play_arrow</i></button>
+        {/if}
       </div>
       <div class="albums">
         <div class="music-player-container is-playing">
           <div class="music-player">
             <div class="player-content-container">
-              <h1 class="artist-name">Incubus</h1>
-              <h2 class="album-title">Make Yourself</h2>
-              <h3 class="song-title">"Stellar"</h3>
+              <h1 class="artist-name"></h1>
+              <h2 class="album-title"></h2>
+              <h3 class="song-title"></h3>
               <div class="music-player-controls">
                 <div class="control-back"></div>
-                <div class="control-play"></div>
+                <div class="control-play" data-status="0"></div>
                 <div class="control-forwards"></div>
               </div>
             </div>
@@ -58,13 +60,25 @@
           {include file='_playlist.tpl'}    
         </div>
 
-        <div id="mp3_player">
+        
+        <div id="mp3_player">        
           <canvas id="analyzer_render"></canvas>
           <div id="audio_box"></div>
         </div>
       </div>
     </div>
   </div>
+
+
+<script>
+  var arraySong = new Array();
+
+  {foreach $playlist as $row}
+      arraySong.push({$row['song_id']})
+  {/foreach}
+  
+</script>
+
 
 {include file='_footer_radio.tpl'}
 <script>

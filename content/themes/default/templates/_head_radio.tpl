@@ -34,9 +34,11 @@
   <link rel="stylesheet" href="{$base_url}/includes/assets/css/style.css">
 
   <style>
+    {if $config[0]['option_value'] != ""}
     body {
       background-image: url({$base_url}/content/uploads/{$config[0]['option_value']});
     }
+    {/if}
   </style>
 </head>
 <body>

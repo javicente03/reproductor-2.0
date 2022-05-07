@@ -443,7 +443,7 @@ body {
 }
 
 .album-art {
-  background: #fff url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/incubus-make-yourself.jpg") center/cover no-repeat;
+  background: #fff url("") center/cover no-repeat;
   height: 215px;
   position: relative;
   width: 215px;
@@ -451,11 +451,6 @@ body {
 }
 
 .vinyl {
-  -webkit-animation: spin 2s linear infinite;
-  -moz-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-  -webkit-transition: all 500ms;
-  -moz-transition: all 500ms;
   transition: all 500ms;
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/vinyl.png"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/incubus-make-yourself.jpg");
   background-position: center, center;
@@ -471,6 +466,15 @@ body {
   z-index: 5;
   will-change: transform, left;
 }
+
+.vinyl-animate {
+-webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  -webkit-transition: all 500ms;
+  -moz-transition: all 500ms;
+}
+
 .is-playing .vinyl {
   left: 52%;
 }
@@ -498,7 +502,7 @@ body {
   background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/play.svg") center/cover no-repeat;
 }
 .is-playing .control-play {
-  background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/pause.svg") center/cover no-repeat;
+  background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/play.svg") center/cover no-repeat;
 }
 
 .control-forwards {
@@ -700,6 +704,12 @@ body {
   text-decoration: none;
 }
 
+.js_play:hover{
+  background: #caf0ff54;
+  border-radius: 2em;
+  transition: ease .5s;
+}
+
 .label-file {
   background: #377ed0;
   font-weight: bold;
@@ -745,7 +755,7 @@ div.center {
 
 div#mp3_player{
   width: 300px;
-  height: 180px;
+  height: 150px;
   background: #000;
   padding: 5px;
   margin: 50px auto;
@@ -759,7 +769,7 @@ div#mp3_player > div > audio{
 
 div#mp3_player > canvas {
   width: 290px;
-  height: 150px;
-  background: #002D3C;
+  height: 120px;
+  background: #001A22;
   float: left;
 }

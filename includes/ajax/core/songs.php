@@ -46,6 +46,8 @@ try {
 			}
 
 			$_POST['photo'] = json_decode($_POST['photo']);
+			$_POST['photo'] = ($_POST['photo']!="")?$_POST['photo']:'default/vinilo.png';
+
 			$user->addSong($_POST);
 
 			// return

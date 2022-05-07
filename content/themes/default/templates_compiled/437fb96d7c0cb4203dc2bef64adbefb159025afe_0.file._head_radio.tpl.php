@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2022-05-06 22:55:09
+/* Smarty version 3.1.40, created on 2022-05-07 03:49:05
   from 'C:\xampp\htdocs\reproductor\content\themes\default\templates\_head_radio.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6275a74d22c3c9_90941045',
+  'unifunc' => 'content_6275ec31cae9b3_40134748',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '437fb96d7c0cb4203dc2bef64adbefb159025afe' => 
     array (
       0 => 'C:\\xampp\\htdocs\\reproductor\\content\\themes\\default\\templates\\_head_radio.tpl',
-      1 => 1651877706,
+      1 => 1651895333,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6275a74d22c3c9_90941045 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6275ec31cae9b3_40134748 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -58,11 +58,13 @@ function content_6275a74d22c3c9_90941045 (Smarty_Internal_Template $_smarty_tpl)
 /includes/assets/css/style.css">
 
   <style>
+    <?php if ($_smarty_tpl->tpl_vars['config']->value[0]['option_value'] != '') {?>
     body {
       background-image: url(<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 /content/uploads/<?php echo $_smarty_tpl->tpl_vars['config']->value[0]['option_value'];?>
 );
     }
+    <?php }?>
   </style>
 </head>
 <body>
