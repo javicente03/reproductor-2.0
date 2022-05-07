@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.div-center {
+	margin-top: 20px;
+}
+
+.div-center > #login {
+	margin: 0 auto;
+}
+
+.send-login {
+	background-color: #000386;
+	border: transparent;
+	border-radius: 1em;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+	width: 100%;
+}
+
+#login > form > div > div > * {
+	margin: 10px;
+	text-align: center;
+}
