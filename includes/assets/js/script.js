@@ -6,6 +6,7 @@
   audio.controls = true;
   audio.autoplay = false;
   audio.id = "audioMusic";
+  audio.volume = 0.5;
   document.getElementById('audio_box').appendChild(audio);
 
   var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;

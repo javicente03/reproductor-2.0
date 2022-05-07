@@ -14,9 +14,9 @@ require('../../../bootstrap.php');
 is_ajax();
 
 // check user logged in
-// if ($user->_logged_in) {
-// 	return_json(array('callback' => 'window.location.reload();'));
-// }
+if (!$user->_logged_in) {
+	return_json(array('callback' => 'window.location.reload();'));
+}
 
 // check type
 if (!isset($_POST["type"])) {

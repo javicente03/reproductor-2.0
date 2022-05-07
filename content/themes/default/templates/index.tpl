@@ -23,10 +23,12 @@
       </div>
     </div>
     <div class="right">
-      <div class="search"><i class="material-icons">search</i>
-        <input placeholder="Find and listen to your favorate music..."/>
+      <div class="search js_search"><i class="material-icons">search</i>
+        <form id="search" data-url="data/search.php?do=search">
+          <input type="text" name="search" placeholder="Find and listen to your favorate music..."/>
+        </form>
       </div>
-      <div class="account"><i class="material-icons">notifications_none</i><img class="avatar" src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/350523/profile/profile-80.jpg?1"/></div>
+      <div class="account open-modal" data-open="modal1"><img class="avatar" src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/350523/profile/profile-80.jpg?1"/></div>
       <div class="row">
         <h1>Featured Albums</h1>
         {if $playlist}
@@ -74,6 +76,8 @@
   </section>
 {/if}
 
+{include file='modal_login.tpl'}
+{include file='modal_signup.tpl'}
 
 <script>
   var arraySong = new Array();

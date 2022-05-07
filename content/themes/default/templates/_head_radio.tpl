@@ -32,6 +32,7 @@
   <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="{$base_url}/includes/assets/css/style.css">
+  <link rel="stylesheet" href="{$base_url}/includes/assets/css/modals.css">
   {if $config[0]['option_value'] != "" && $config[0]['type'] == 'video'} 
   <link rel="stylesheet" href="{$base_url}/includes/assets/css/style-video.css">
   {/if}

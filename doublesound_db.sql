@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2022 a las 09:22:14
+-- Tiempo de generación: 08-05-2022 a las 01:27:28
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -76,7 +76,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_firstname`, `user_lastname`, `user_email`, `user_password`) VALUES
-(1, 'javicente', 'Javier', 'Gerardo', 'javicentego@gmail.com', '$2y$10$/ZpW2PxHy2eRHCDTVQjWz..yFbuBaQirnBCICgHgo2O7J6TVjEAJC');
+(1, 'javicente', 'Javier', 'Gerardo', 'javicentego@gmail.com', '$2y$10$/ZpW2PxHy2eRHCDTVQjWz..yFbuBaQirnBCICgHgo2O7J6TVjEAJC'),
+(2, 'Javier03', 'Vicente', 'Gerardo', 'cocolisos0@gmail.com', '$2y$10$GJa07ufJ9aNnXRxItN0vqOcUNukFa31fhFXsNC5FlF/M5gO0QGGNu');
 
 --
 -- Índices para tablas volcadas
@@ -87,6 +88,7 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_firstname`, `user_lastname`, 
 --
 ALTER TABLE `songs`
   ADD PRIMARY KEY (`song_id`);
+ALTER TABLE `songs` ADD FULLTEXT KEY `song_name` (`song_name`);
 
 --
 -- Indices de la tabla `system_option`
@@ -120,7 +122,7 @@ ALTER TABLE `system_option`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

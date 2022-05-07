@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2022-05-07 18:09:07
+/* Smarty version 3.1.40, created on 2022-05-07 20:12:27
   from 'C:\xampp\htdocs\reproductor\content\themes\default\templates\_head_radio.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6276b5c3bc1cc4_01676832',
+  'unifunc' => 'content_6276d2ab030409_23521793',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '437fb96d7c0cb4203dc2bef64adbefb159025afe' => 
     array (
       0 => 'C:\\xampp\\htdocs\\reproductor\\content\\themes\\default\\templates\\_head_radio.tpl',
-      1 => 1651946946,
+      1 => 1651954316,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6276b5c3bc1cc4_01676832 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6276d2ab030409_23521793 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -56,6 +56,8 @@ function content_6276b5c3bc1cc4_01676832 (Smarty_Internal_Template $_smarty_tpl)
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 /includes/assets/css/style.css">
+  <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+/includes/assets/css/modals.css">
   <?php if ($_smarty_tpl->tpl_vars['config']->value[0]['option_value'] != '' && $_smarty_tpl->tpl_vars['config']->value[0]['type'] == 'video') {?> 
   <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 /includes/assets/css/style-video.css">

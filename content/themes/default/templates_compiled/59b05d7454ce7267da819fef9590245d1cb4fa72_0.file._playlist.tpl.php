@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2022-05-07 18:12:40
+/* Smarty version 3.1.40, created on 2022-05-07 22:01:25
   from 'C:\xampp\htdocs\reproductor\content\themes\default\templates\_playlist.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6276b698c80099_67739648',
+  'unifunc' => 'content_6276ec35170a24_76073753',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '59b05d7454ce7267da819fef9590245d1cb4fa72' => 
     array (
       0 => 'C:\\xampp\\htdocs\\reproductor\\content\\themes\\default\\templates\\_playlist.tpl',
-      1 => 1651947103,
+      1 => 1651960566,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6276b698c80099_67739648 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6276ec35170a24_76073753 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['playlist']->value) {?>
-<div class="playlist-container playlist-scroll">
+<div class="playlist-container playlist-scroll" id="playlist">
   <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['playlist']->value, 'row');
 $_smarty_tpl->tpl_vars['row']->do_else = true;

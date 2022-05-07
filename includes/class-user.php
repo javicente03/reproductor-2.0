@@ -504,7 +504,7 @@ class User
         global $db;
 
         $playlist = [];
-        $songs = $db->query("SELECT * FROM songs");
+        $songs = $db->query("SELECT * FROM songs") or _error("SQL_ERROR_THROWEN");
 
         if($songs->num_rows > 0){
             while ($song = $songs->fetch_assoc()) {
