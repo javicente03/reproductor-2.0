@@ -41,13 +41,51 @@ if (!isset($_POST["handle"])) {
 try {
 
 	switch($_POST['type']){
+        case 'video':
+            $folder = 'video';
+            $directory = $folder . '/' . date('Y') . '/' . date('m') . '/';
+
+            // valid inputs
+            if (!isset($_FILES["file"]) || $_FILES["file"]["error"] != UPLOAD_ERR_OK) {
+                return_json(array('error' => true, 'message' => 'Lo siento, ha ocurrido un error'));
+            }
+
+            // check file extesnion
+            $extension = get_extension($_FILES['file']['name']);
+            if (!valid_extension($extension, 'mp4, mkv, flv, avi, mov, wmv')) {
+                return_json(array('error' => true, 'message' => 'Formato inválido'));
+            }
+
+            $prefix = "DoubleSound". get_hash_token();
+            $file_name = $directory . $prefix . '.' . $extension;
+            $uploads_directory = "content/uploads";
+            $path = ABSPATH . $uploads_directory . '/' . $file_name;
+
+
+            /* local server */
+                /* set uploads directory */
+                if (!file_exists(ABSPATH . $uploads_directory . '/' . $folder)) {
+                    @mkdir(ABSPATH . $uploads_directory . '/' . $folder, 0777, true);
+                }
+                if (!file_exists(ABSPATH . $uploads_directory . '/' . $folder . '/' . date('Y'))) {
+                    @mkdir(ABSPATH . $uploads_directory . '/' . $folder . '/' . date('Y'), 0777, true);
+                }
+                if (!file_exists($uploads_directory . '/' . $folder . '/' . date('Y') . '/' . date('m'))) {
+                    @mkdir(ABSPATH . $uploads_directory . '/' . $folder . '/' . date('Y') . '/' . date('m'), 0777, true);
+                }
+                /* check if the file uploaded successfully */
+                if (!@move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
+                    return_json(array('error' => true, 'message' => 'Lo siento, no pudo subirse el archivo'));
+                }            
+            break;
+
 		case 'photo':
 			$folder = 'photos';
             $directory = $folder . '/' . date('Y') . '/' . date('m') . '/';
 
             // valid inputs
             if (!isset($_FILES["file"]) || $_FILES["file"]["error"] != UPLOAD_ERR_OK) {
-                modal("ERROR", __("Upload Error"), __("Something wrong with upload! Is 'upload_max_filesize' set correctly?"));
+                return_json(array('error' => true, 'message' => 'Lo siento, ha ocurrido un error'));
             }
 
             // check file extesnion
@@ -75,7 +113,7 @@ try {
                 }
                 /* check if the file uploaded successfully */
                 if (!@move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
-                    modal("ERROR", __("Upload Error"), __("Sorry, can not upload the file"));
+                    return_json(array('error' => true, 'message' => 'Lo siento, no pudo subirse el archivo'));
                 }            
 			break;
 
@@ -86,7 +124,7 @@ try {
 
             // valid inputs
             if (!isset($_FILES["file"]) || $_FILES["file"]["error"] != UPLOAD_ERR_OK) {
-                modal("ERROR", __("Upload Error"), __("Something wrong with upload! Is 'upload_max_filesize' set correctly?"));
+                return_json(array('error' => true, 'message' => 'Lo siento, ha ocurrido un error'));
             }
 
             // check file extesnion
@@ -114,7 +152,7 @@ try {
                 }
                 /* check if the file uploaded successfully */
                 if (!@move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
-                    modal("ERROR", __("Upload Error"), __("Sorry, can not upload the file"));
+                    return_json(array('error' => true, 'message' => 'Lo siento, no pudo subirse el archivo'));
                 }
             break;
 	}

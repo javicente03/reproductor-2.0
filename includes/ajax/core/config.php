@@ -19,11 +19,11 @@ if (!$user->_logged_in) {
 	return_json(array('callback' => 'window.location.reload();'));
 }
 
-if(!isset($_POST['photo']) || json_decode($_POST['photo']) =="")
+if(!isset($_POST['upload']) || json_decode($_POST['upload']) =="")
 	return_json(array('error' => true, 'message' => 'Error al procesar'));
 
 try {
-	$_POST['photo'] = json_decode($_POST['photo']);
+	$_POST['upload'] = json_decode($_POST['upload']);
 	// signup
 	$user->set_config($_POST);
 	return_json(array('callback' => 'window.location.reload();'));

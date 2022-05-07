@@ -156,10 +156,15 @@ $(function () {
         var url = element.data('url');
         var submit = element.find('button[type="submit"]');
         var error = element.find('.error-panel');
-        let photo = (element.data('photo')) ? element.data('photo') : '';
+        let upload = (element.data('photo')) ? element.data('photo') : '';
+        
+        if(upload=="")
+            upload = (element.data('video')) ? element.data('video') : '';
+
 
         var data = new FormData();
-        data.append('photo', JSON.stringify(photo));
+        data.append('upload', JSON.stringify(upload));
+
 
         //console.log(ajax_path + url)
         $.ajax({

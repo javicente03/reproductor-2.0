@@ -240,6 +240,10 @@ body {
 .right .daily-mix .song .duration {
   width: 28px;
 }
+.duration {
+  width: 60px !important;
+}
+
 .right .play-lists {
   width: 45%;
   margin-left: 20px;
@@ -656,7 +660,7 @@ body {
   transition: ease 2s;
 }
 
-#file_audio, #file_photo {
+#file_audio, #file_photo, #file_video {
  display: none;
 }
 
@@ -719,6 +723,12 @@ body {
   color: white;
   border-radius: .5em;
   display: inline-block;
+}
+
+.playlist-scroll {
+  overflow: scroll;
+  height: 200px;
+  overflow-x: hidden;
 }
 
 .success-panel {

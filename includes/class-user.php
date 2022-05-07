@@ -482,7 +482,7 @@ class User
 
     public function set_config($args = []){
         global $db;
-        $db->query(sprintf("UPDATE system_option SET option_value = %s WHERE option_name = 'wallpaper'", secure($args['photo']))) or _error('SQL_ERROR_THROWEN');
+        $db->query(sprintf("UPDATE system_option SET option_value = %s WHERE option_name = 'wallpaper'", secure($args['upload']))) or _error('SQL_ERROR_THROWEN');
     }
 
 

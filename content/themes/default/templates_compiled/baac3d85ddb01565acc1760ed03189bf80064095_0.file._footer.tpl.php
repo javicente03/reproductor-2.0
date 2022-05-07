@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2022-05-06 23:05:31
+/* Smarty version 3.1.40, created on 2022-05-07 17:59:18
   from 'C:\xampp\htdocs\reproductor\content\themes\default\templates\_footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6275a9bbe626e7_98213452',
+  'unifunc' => 'content_6276b376733d32_89264983',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'baac3d85ddb01565acc1760ed03189bf80064095' => 
     array (
       0 => 'C:\\xampp\\htdocs\\reproductor\\content\\themes\\default\\templates\\_footer.tpl',
-      1 => 1651878129,
+      1 => 1651946343,
       2 => 'file',
     ),
   ),
@@ -21,8 +21,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:_js_files.tpl' => 1,
   ),
 ),false)) {
-function content_6275a9bbe626e7_98213452 (Smarty_Internal_Template $_smarty_tpl) {
-echo '<script'; ?>
+function content_6276b376733d32_89264983 (Smarty_Internal_Template $_smarty_tpl) {
+if ($_smarty_tpl->tpl_vars['config']->value[0]['option_value'] != '' && $_smarty_tpl->tpl_vars['config']->value[0]['type'] == 'video') {?>
+  </div>
+  </section>
+<?php }?>
+
+<?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 /content/themes/default/css/jquery.min.js"><?php echo '</script'; ?>
 >

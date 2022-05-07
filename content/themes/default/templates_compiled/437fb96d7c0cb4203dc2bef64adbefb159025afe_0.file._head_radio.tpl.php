@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2022-05-07 03:49:05
+/* Smarty version 3.1.40, created on 2022-05-07 18:09:07
   from 'C:\xampp\htdocs\reproductor\content\themes\default\templates\_head_radio.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6275ec31cae9b3_40134748',
+  'unifunc' => 'content_6276b5c3bc1cc4_01676832',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '437fb96d7c0cb4203dc2bef64adbefb159025afe' => 
     array (
       0 => 'C:\\xampp\\htdocs\\reproductor\\content\\themes\\default\\templates\\_head_radio.tpl',
-      1 => 1651895333,
+      1 => 1651946946,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6275ec31cae9b3_40134748 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6276b5c3bc1cc4_01676832 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -56,9 +56,13 @@ function content_6275ec31cae9b3_40134748 (Smarty_Internal_Template $_smarty_tpl)
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 /includes/assets/css/style.css">
+  <?php if ($_smarty_tpl->tpl_vars['config']->value[0]['option_value'] != '' && $_smarty_tpl->tpl_vars['config']->value[0]['type'] == 'video') {?> 
+  <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+/includes/assets/css/style-video.css">
+  <?php }?>
 
   <style>
-    <?php if ($_smarty_tpl->tpl_vars['config']->value[0]['option_value'] != '') {?>
+    <?php if ($_smarty_tpl->tpl_vars['config']->value[0]['option_value'] != '' && $_smarty_tpl->tpl_vars['config']->value[0]['type'] == 'image') {?>
     body {
       background-image: url(<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
 /content/uploads/<?php echo $_smarty_tpl->tpl_vars['config']->value[0]['option_value'];?>
@@ -68,7 +72,16 @@ function content_6275ec31cae9b3_40134748 (Smarty_Internal_Template $_smarty_tpl)
   </style>
 </head>
 <body>
+<?php if ($_smarty_tpl->tpl_vars['config']->value[0]['option_value'] != '' && $_smarty_tpl->tpl_vars['config']->value[0]['type'] == 'video') {?>
+<section class="container">
+  <div class="video-container">
 
+  <video src="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+/content/uploads/<?php echo $_smarty_tpl->tpl_vars['config']->value[0]['option_value'];?>
+" autoplay muted loop></video>
+  </div>
+<div class="contenido">
+<?php }?>
 <!-- Loading -->
   <div class="loading show">
     <div class="disco">

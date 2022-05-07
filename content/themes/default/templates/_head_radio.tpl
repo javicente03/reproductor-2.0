@@ -32,9 +32,12 @@
   <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="{$base_url}/includes/assets/css/style.css">
+  {if $config[0]['option_value'] != "" && $config[0]['type'] == 'video'} 
+  <link rel="stylesheet" href="{$base_url}/includes/assets/css/style-video.css">
+  {/if}
 
   <style>
-    {if $config[0]['option_value'] != ""}
+    {if $config[0]['option_value'] != "" && $config[0]['type'] == 'image'}
     body {
       background-image: url({$base_url}/content/uploads/{$config[0]['option_value']});
     }
@@ -42,7 +45,14 @@
   </style>
 </head>
 <body>
+{if $config[0]['option_value'] != "" && $config[0]['type'] == 'video'}
+<section class="container">
+  <div class="video-container">
 
+  <video src="{$base_url}/content/uploads/{$config[0]['option_value']}" autoplay muted loop></video>
+  </div>
+<div class="contenido">
+{/if}
 <!-- Loading -->
   <div class="loading show">
     <div class="disco">

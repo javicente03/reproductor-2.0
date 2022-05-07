@@ -9,6 +9,7 @@
 		<div class="js_ajax-form-data form-panel" data-url="core/config.php">
 			<h4>Cambiar fondo</h4>
 			{include file='_form_upload_image.tpl'}
+			{include file='_form_upload_video.tpl'}
 			<button type="submit">Guardar</button>
 			<div class="error-panel"></div>
 		</div>

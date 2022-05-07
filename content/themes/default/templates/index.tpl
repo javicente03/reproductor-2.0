@@ -69,6 +69,11 @@
     </div>
   </div>
 
+{if $config[0]['option_value'] != "" && $config[0]['type'] == 'video'}
+  </div>
+  </section>
+{/if}
+
 
 <script>
   var arraySong = new Array();

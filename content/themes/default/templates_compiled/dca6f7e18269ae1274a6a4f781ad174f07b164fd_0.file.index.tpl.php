@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2022-05-07 06:55:53
+/* Smarty version 3.1.40, created on 2022-05-07 18:05:08
   from 'C:\xampp\htdocs\reproductor\content\themes\default\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_627617f94ce899_96984501',
+  'unifunc' => 'content_6276b4d48c6663_60067372',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dca6f7e18269ae1274a6a4f781ad174f07b164fd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\reproductor\\content\\themes\\default\\templates\\index.tpl',
-      1 => 1651906551,
+      1 => 1651946356,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:_footer_radio.tpl' => 1,
   ),
 ),false)) {
-function content_627617f94ce899_96984501 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6276b4d48c6663_60067372 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:_head_radio.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -96,6 +96,11 @@ $_smarty_tpl->_subTemplateRender('file:_head_radio.tpl', $_smarty_tpl->cache_id,
       </div>
     </div>
   </div>
+
+<?php if ($_smarty_tpl->tpl_vars['config']->value[0]['option_value'] != '' && $_smarty_tpl->tpl_vars['config']->value[0]['type'] == 'video') {?>
+  </div>
+  </section>
+<?php }?>
 
 
 <?php echo '<script'; ?>
