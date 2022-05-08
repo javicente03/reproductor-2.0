@@ -1,56 +1,38 @@
 <?php
-/* Smarty version 3.1.40, created on 2022-05-07 23:08:34
+/* Smarty version 3.1.40, created on 2022-05-08 00:40:33
   from 'C:\xampp\htdocs\reproductor\content\themes\default\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6276fbf2486583_13227683',
+  'unifunc' => 'content_62771181648c56_61707812',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dca6f7e18269ae1274a6a4f781ad174f07b164fd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\reproductor\\content\\themes\\default\\templates\\index.tpl',
-      1 => 1651964598,
+      1 => 1651970398,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:_head_radio.tpl' => 1,
+    'file:_menu.tpl' => 1,
     'file:_playlist.tpl' => 1,
     'file:modal_login.tpl' => 1,
     'file:modal_signup.tpl' => 1,
     'file:_footer_radio.tpl' => 1,
   ),
 ),false)) {
-function content_6276fbf2486583_13227683 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62771181648c56_61707812 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:_head_radio.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
   <div class="center">
-    <div class="left">
-      <div class="controls">
-        <div class="close"></div>
-        <div class="minimize"></div>
-        <div class="maximize"></div>
-      </div>
-      <div class="menu">
-        <div class="title">MENU</div>
-          <div class="item"><i class="material-icons">layers</i><span>About</span></div>
-          <div class="item"><i class="material-icons">radio</i><span>Playlist</span></div>
-          <div class="item"><i class="material-icons">mic</i><span>Our team</span></div>
-          <div class="item"><i class="material-icons">album</i><span>Contacts</span></div>
-          <div class="item"><i class="material-icons">shop</i><span>Shop</span></div>
-      </div>
-      <div class="playlists">
-        <div class="title">OTHERS</div>
-          <div class="item"><i class="material-icons">radio</i><span>Radio</span></div>
-          <div class="item"><i class="material-icons">list</i><span>Reggaeton</span></div>
-          <div class="item"><i class="material-icons">chat</i><span>Chat</span></div>
-      </div>
-    </div>
+    <?php $_smarty_tpl->_subTemplateRender('file:_menu.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
     <div class="right">
       <div class="search js_search"><i class="material-icons">search</i>
         <form id="search" data-url="data/search.php?do=search">
@@ -131,12 +113,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
 
 <?php $_smarty_tpl->_subTemplateRender('file:_footer_radio.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-echo '<script'; ?>
->
-  window.onload = function() {
-      document.querySelector('div.center').style.display = "flex"
-      document.querySelector('.loading').style.display = "none" 
-  }
-<?php echo '</script'; ?>
-><?php }
+}
 }

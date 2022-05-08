@@ -78,6 +78,11 @@ RewriteRule ^signout/?$ sign.php?do=out [L,QSA]
 # Panel
 RewriteRule ^dashboard/?$ dashboard.php [L,QSA]
 RewriteRule ^config/?$ config.php [L,QSA]
+RewriteRule ^messages/([^/]+)/?$ messages.php?view=$1 [L,QSA]
+
 
 # Songs
 RewriteRule ^song/([^/]+)/?$ songs.php?view=$1 [L,QSA]
+
+# Contact
+RewriteRule ^contact/?$ index.php?do=contact [L,QSA]

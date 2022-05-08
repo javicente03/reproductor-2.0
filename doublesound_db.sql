@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2022 a las 01:27:28
+-- Tiempo de generación: 08-05-2022 a las 17:59:19
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `doublesound_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `messages_contact`
+--
+
+CREATE TABLE `messages_contact` (
+  `message_id` int(11) NOT NULL,
+  `message_text` varchar(500) NOT NULL,
+  `message_subject` varchar(64) NOT NULL,
+  `message_email` varchar(64) NOT NULL,
+  `message_date` date DEFAULT NULL,
+  `message_status` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -84,6 +99,12 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_firstname`, `user_lastname`, 
 --
 
 --
+-- Indices de la tabla `messages_contact`
+--
+ALTER TABLE `messages_contact`
+  ADD PRIMARY KEY (`message_id`);
+
+--
 -- Indices de la tabla `songs`
 --
 ALTER TABLE `songs`
@@ -105,6 +126,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `messages_contact`
+--
+ALTER TABLE `messages_contact`
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `songs`

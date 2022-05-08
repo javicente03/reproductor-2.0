@@ -15,10 +15,12 @@ $(function () {
                 } else{
                 	var result = JSON.parse(response)
                 	result.forEach(function(e){
-                		let node_content = `<div>${e.song_name}</div>
-						      <div>${e.song_album}</div>
-						      <div>${e.song_artist}</div>
-						      <div class="duration">${e.song_duration}</div>`;
+                		let node_content = `
+                			<img src="${site_path}/content/uploads/${e.song_image}"/>
+                			<div>${e.song_name}</div>
+						    <div>${e.song_album}</div>
+						    <div>${e.song_artist}</div>
+						    <div class="duration">${e.song_duration}</div>`;
 						let node = document.createElement('div');
 						node.id = e.song_id;
 						node.className = "song js_play";
@@ -52,10 +54,12 @@ $(function () {
                 } else{
                 	var result = JSON.parse(response)
                 	result.forEach(function(e){
-                		let node_content = `<div>${e.song_name}</div>
-						      <div>${e.song_album}</div>
-						      <div>${e.song_artist}</div>
-						      <div class="duration">${e.song_duration}</div>`;
+                		let node_content = `
+                			<img src="${site_path}/content/uploads/${e.song_image}"/>
+                			<div>${e.song_name}</div>
+						    <div>${e.song_album}</div>
+						    <div>${e.song_artist}</div>
+						    <div class="duration">${e.song_duration}</div>`;
 						let node = document.createElement('div');
 						node.id = e.song_id;
 						node.className = "song js_play";

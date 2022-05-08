@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2022-05-06 16:52:02
+/* Smarty version 3.1.40, created on 2022-05-08 14:46:47
   from 'C:\xampp\htdocs\reproductor\content\themes\default\templates\_playlist_table.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_62755232581017_47663854',
+  'unifunc' => 'content_6277d7d7643ea8_37272570',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9c71243c7c827ee18e858b566920f6dc324b58a8' => 
     array (
       0 => 'C:\\xampp\\htdocs\\reproductor\\content\\themes\\default\\templates\\_playlist_table.tpl',
-      1 => 1651855777,
+      1 => 1652021183,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62755232581017_47663854 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6277d7d7643ea8_37272570 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="right">
+	<div class="table-container">
 	<h2>Playlist</h2>
 
 	<table class="table">
@@ -67,6 +68,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			<?php }?>
 		</tbody>
 	</table>
+	</div>
 	<div class="error-panel">Error</div>
 </div><?php }
 }

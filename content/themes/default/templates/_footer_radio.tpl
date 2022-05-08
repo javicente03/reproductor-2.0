@@ -8,5 +8,12 @@
       <script  src="{$base_url}/includes/assets/js/modals.js"></script>
       <script  src="{$base_url}/includes/assets/js/core.js"></script>
   {/if}
+
+  <script>
+    window.onload = function() {
+        document.querySelector('div.center').style.display = "flex"
+        document.querySelector('.loading').style.display = "none" 
+    }
+  </script>
 </body>
 </html>

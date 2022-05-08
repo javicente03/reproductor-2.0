@@ -486,6 +486,50 @@ class User
     }
 
 
+    /**
+     * 
+     * get_messages
+     * @param boolean
+     * @return array
+     * 
+     * */
+
+    public function get_messages($status){
+        global $db;
+        $messages = [];
+
+        $get_messages = $db->query("SELECT * FROM messages_contact WHERE message_status = '$status'") or _error('SQL_ERROR_THROWEN');
+
+        if($get_messages->num_rows > 0){
+            while($row = $get_messages->fetch_assoc()){
+                $messages[] = $row;
+            }
+        }
+
+        return $messages;
+    }
+
+    /**
+     * 
+     * get_message
+     * @param int
+     * @return array
+     * 
+     * */
+
+    public function get_message($id){
+        global $db;
+
+        $get_message = $db->query(sprintf("SELECT * FROM messages_contact WHERE message_id = %s", secure($id, 'int'))) or _error('SQL_ERROR_THROWEN');
+
+        if($get_message->num_rows > 0){
+            $message = $get_message->fetch_assoc();
+            return $message;
+        } else
+            return false;
+    }
+
+
     /********************************
      * 
      * PLAYLIST

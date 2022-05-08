@@ -1,4 +1,5 @@
 <div class="right">
+	<div class="table-container">
 	<h2>Playlist</h2>
 
 	<table class="table">
@@ -31,5 +32,6 @@
 			{/if}
 		</tbody>
 	</table>
+	</div>
 	<div class="error-panel">Error</div>
 </div>

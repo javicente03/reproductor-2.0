@@ -1,27 +1,7 @@
 {include file='_head_radio.tpl'}
 
   <div class="center">
-    <div class="left">
-      <div class="controls">
-        <div class="close"></div>
-        <div class="minimize"></div>
-        <div class="maximize"></div>
-      </div>
-      <div class="menu">
-        <div class="title">MENU</div>
-          <div class="item"><i class="material-icons">layers</i><span>About</span></div>
-          <div class="item"><i class="material-icons">radio</i><span>Playlist</span></div>
-          <div class="item"><i class="material-icons">mic</i><span>Our team</span></div>
-          <div class="item"><i class="material-icons">album</i><span>Contacts</span></div>
-          <div class="item"><i class="material-icons">shop</i><span>Shop</span></div>
-      </div>
-      <div class="playlists">
-        <div class="title">OTHERS</div>
-          <div class="item"><i class="material-icons">radio</i><span>Radio</span></div>
-          <div class="item"><i class="material-icons">list</i><span>Reggaeton</span></div>
-          <div class="item"><i class="material-icons">chat</i><span>Chat</span></div>
-      </div>
-    </div>
+    {include file='_menu.tpl'}
     <div class="right">
       <div class="search js_search"><i class="material-icons">search</i>
         <form id="search" data-url="data/search.php?do=search">
@@ -90,9 +70,3 @@
 
 
 {include file='_footer_radio.tpl'}
-<script>
-  window.onload = function() {
-      document.querySelector('div.center').style.display = "flex"
-      document.querySelector('.loading').style.display = "none" 
-  }
-</script>

@@ -8,6 +8,7 @@ $(function () {
         var url = element.data('url');
         var submit = element.find('button[type="submit"]');
         var error = element.find('.error-panel');
+        let success = (element.find('.success-panel'))?element.find('.success-panel'):undefined;
         /* show any collapsed section if any */
         if (element.find('.js_hidden-section').length > 0 && !element.find('.js_hidden-section').is(':visible')) {
             element.find('.js_hidden-section').slideDown();
@@ -193,6 +194,6 @@ $(function () {
 
     $('body').on('click', '.js_ajax-form-data button[type="submit"]', function () {
         sendData($(this).closest('.js_ajax-form-data'));
-    }); 
+    });
 
 });
