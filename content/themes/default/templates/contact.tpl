@@ -19,11 +19,6 @@
 	</div>	
 </div>
 
-{if $config[0]['option_value'] != "" && $config[0]['type'] == 'video'}
-  </div>
-  </section>
-{/if}
-
 {include file='modal_login.tpl'}
 {include file='modal_signup.tpl'}
 

@@ -19,14 +19,33 @@ if (!$user->_logged_in) {
 	return_json(array('callback' => 'window.location.reload();'));
 }
 
-if(!isset($_POST['upload']) || json_decode($_POST['upload']) =="")
-	return_json(array('error' => true, 'message' => 'Error al procesar'));
 
 try {
-	$_POST['upload'] = json_decode($_POST['upload']);
-	// signup
-	$user->set_config($_POST);
-	return_json(array('callback' => 'window.location.reload();'));
+
+	switch($_GET['do']){
+
+		case 'wallpaper':
+			if(!isset($_POST['upload']) || json_decode($_POST['upload']) =="")
+				return_json(array('error' => true, 'message' => 'Error al procesar'));
+			$_POST['upload'] = json_decode($_POST['upload']);
+			$user->set_config($_POST, $_GET['do']);
+			return_json(array('callback' => 'window.location.reload();'));
+			break;
+
+		case 'about':
+			if($_POST['about'] =="")
+				return_json(array('error' => true, 'message' => 'Debe ingresar la descripción'));
+
+			$_POST['upload'] = json_decode($_POST['upload']);
+			$user->set_config($_POST, $_GET['do']);
+			return_json(array('callback' => "success.html('Modificación exitósa');
+												success.css('display', 'block');
+												setTimeout(function(){
+	                        					success.css('display', 'none')
+                    						}, 5000);"));
+			break;
+	}
+	
 } catch (Exception $e) {
 	return_json(array('error' => true, 'message' => $e->getMessage()));
 }

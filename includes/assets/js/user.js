@@ -4,6 +4,17 @@ ajax_path = site_path+"/includes/ajax/";
 api['data/upload'] = ajax_path + "data/upload.php";
 
 
+$(document).ready(function(){
+    let uploaders = document.querySelectorAll('.x-uploader');
+
+    uploaders.forEach(function(e){
+        let container = $(e).parents('.container-uploader');
+        $(container).find(".label-file").attr('for', $(container).data('id'));
+        $(container).find("input[type='file']").attr('id', $(container).data('id'));
+
+    })
+})
+
 $(function (){
 
     // Retornar tiempo de la canción 
@@ -31,8 +42,9 @@ $(function (){
             audio_node.onloadedmetadata = function() {
                 window.URL.revokeObjectURL(audio_node.src);
                 let duration = audio_node.duration;
+                document.getElementById("seconds").value = duration;
                 let timeDuration = secondsToString(duration);
-                document.getElementById("duration").value = timeDuration
+                document.getElementById("duration").value = timeDuration;
             }
             audio_node.src = URL.createObjectURL(inputfile);
         }
@@ -42,26 +54,27 @@ $(function (){
 
     /* initialize uploading */
     $('body').on('change', '.x-uploader input[type="file"]', function () {
-        $(this).parent('.x-uploader').submit();
+        uploadingFunction($(this).closest('.x-uploader'))
     });
     /* uploading */
-    $('body').on('submit', '.x-uploader', function (e) {
-        e.preventDefault();
+    function uploadingFunction(element){
         // get type
-        var type = $(this).find('.js_x-uploader').data('type') || "photos";
+        var type = $(element).find('.js_x-uploader').data('type') || "photos";
         /* get handle */
-        var handle = $(this).find('.js_x-uploader').data('handle');
+        var handle = $(element).find('.js_x-uploader').data('handle');
         // get file
-        let inputfile = $(this).find('input[type="file"]');
+        let inputfile = $(element).find('input[type="file"]');
         inputfile = inputfile[0].files[0];
-        getDurationFile(inputfile);
+
+        if(type=='audio')
+            getDurationFile(inputfile);
 
         // FormData
         var formData = new FormData();
         formData.append('file', inputfile);
         formData.append('type', type);
         formData.append('handle', handle);
-        var songData = $(this).parents('.form-panel');
+        var songData = $(element).parents('.form-panel');
         let error = songData.find('.error-panel');
 
         $.ajax({
@@ -70,7 +83,8 @@ $(function (){
                 xhr.upload.addEventListener("progress", function(evt) {
                     if (evt.lengthComputable) {
                         var percentComplete = (evt.loaded / evt.total) * 100;
-                        document.getElementById("loading_"+type).value = percentComplete;
+                        songData.find(".progress_"+type).val(percentComplete);
+                        // document.getElementById("loading_"+type).value = percentComplete;
                     }
                 }, false);
                 return xhr;
@@ -83,7 +97,7 @@ $(function (){
             contentType: false,
             success: function(response){
                 if(response.error){
-                    document.getElementById("loading_"+type).value = 0;
+                    songData.find(".progress_"+type).value = percentComplete;
                     error.html(response.message)
                     error.css('display', "block")
                     setTimeout(function(){
@@ -97,42 +111,5 @@ $(function (){
                 console.log(error)
             }
         });
-
-        // var options = {
-        //     dataType: "json",
-        //     uploadProgress: _handle_progress,
-        //     success: _handle_success,
-        //     error: _handle_error,
-        //     resetForm: true
-        // };
-        // options['data'] = {};
-        // /* get uploader input */
-        // var uploader = $(this).find('input[type="file"]');
-        // /* get type */
-        // var type = $(this).find('.js_x-uploader').data('type') || "photos";
-        // options['data']['type'] = type;
-        // /* get handle */
-        // var handle = $(this).find('.js_x-uploader').data('handle');
-        // if (handle === undefined) {
-        //     return false;
-        // }
-        // options['data']['handle'] = handle;
-        // console.log(type)
-        // console.log(handle)
-
-        // function _handle_progress(e){
-        //     console.log("AKSSKDDDCCC")
-        //     console.log(handle)
-        // }
-
-        // function _handle_success(response){
-        //     console.log("BBBBBBB")
-        //     console.log(response)
-        // }
-
-        // function _handle_error(error){
-        //     console.log("AAASS")
-        //     console.log(error)
-        // }
-    })
+    }
 })

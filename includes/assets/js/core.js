@@ -41,7 +41,6 @@ $(function () {
                 }
             },
             error: function(error){
-                console.log("error")
                 console.log(error)
             }
         });
@@ -73,6 +72,7 @@ $(function () {
         data.append('music', JSON.stringify(music));
         data.append('photo', JSON.stringify(photo));
         data.append('duration', $("#duration").val());
+        data.append('seconds', $("#seconds").val());
 
         $.ajax({
             url: site_path+'/includes/ajax/'+url,
@@ -89,26 +89,26 @@ $(function () {
                         error.css('display', 'none')
                     }, 5000)
                 } else if(response.success){
-                    element.removeData('audio')
-                    element.removeData('photo')
-                    $("#name").val("")
-                    $("#album").val("")
-                    $("#artist").val("")
-                    $("#file_audio").val("")
-                    $("#file_photo").val("")
-                    $("#loading_audio").val(0)
-                    $("#loading_photo").val(0)
-                    success.html('Canción subida exitósamente')
-                    success.css('display', "block")
+                    element.removeData('audio');
+                    element.removeData('photo');
+                    $("#name").val("");
+                    $("#album").val("");
+                    $("#artist").val("");
+                    element.find(".file_audio").val("");
+                    element.find(".file_photo").val("");
+                    element.find(".progress_audio").val(0);
+                    element.find(".progress_photo").val(0);
+                    success.html('Canción subida exitósamente');
+                    success.css('display', "block");
                     setTimeout(function(){
-                        success.css('display', 'none')
+                        success.css('display', 'none');
                     }, 5000)
                 } else if(response.callback)
-                    eval(response.callback)
+                    eval(response.callback);
             },
             error: function(error){
-                console.log("error")
-                console.log(error)
+                console.log("error");
+                console.log(error);
             }
         });
     }
@@ -154,16 +154,17 @@ $(function () {
     // AJAX FORM
 
     function sendData(element) {
+
         var url = element.data('url');
         var submit = element.find('button[type="submit"]');
         var error = element.find('.error-panel');
+        var success = element.find('.success-panel');
         let upload = (element.data('photo')) ? element.data('photo') : '';
         
         if(upload=="")
             upload = (element.data('video')) ? element.data('video') : '';
-
-
-        var data = new FormData();
+        var form = document.getElementById(element.attr('id'));
+        var data = new FormData(form);
         data.append('upload', JSON.stringify(upload));
 
 
@@ -192,7 +193,8 @@ $(function () {
         });
     }    
 
-    $('body').on('click', '.js_ajax-form-data button[type="submit"]', function () {
+    $('body').on('submit', '.js_ajax-form-data', function (e) {
+        e.preventDefault();
         sendData($(this).closest('.js_ajax-form-data'));
     });
 

@@ -33,24 +33,24 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="{$base_url}/includes/assets/css/style.css">
   <link rel="stylesheet" href="{$base_url}/includes/assets/css/modals.css">
-  {if $config[0]['option_value'] != "" && $config[0]['type'] == 'video'} 
+  {if $config['wallpaper'] != "" && $config['type_wallpaper'] == 'video'} 
   <link rel="stylesheet" href="{$base_url}/includes/assets/css/style-video.css">
   {/if}
 
   <style>
-    {if $config[0]['option_value'] != "" && $config[0]['type'] == 'image'}
+    {if $config['wallpaper'] != "" && $config['type_wallpaper'] == 'image'}
     body {
-      background-image: url({$base_url}/content/uploads/{$config[0]['option_value']});
+      background-image: url({$base_url}/content/uploads/{$config['wallpaper']});
     }
     {/if}
   </style>
 </head>
 <body>
-{if $config[0]['option_value'] != "" && $config[0]['type'] == 'video'}
+{if $config['wallpaper'] != "" && $config['type_wallpaper'] == 'video'}
 <section class="container">
   <div class="video-container">
 
-  <video src="{$base_url}/content/uploads/{$config[0]['option_value']}" autoplay muted loop></video>
+  <video src="{$base_url}/content/uploads/{$config['wallpaper']}" autoplay muted loop></video>
   </div>
 <div class="contenido">
 {/if}

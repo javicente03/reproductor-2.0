@@ -8,6 +8,8 @@
   audio.id = "audioMusic";
   audio.volume = 0.5;
   document.getElementById('audio_box').appendChild(audio);
+  var range = document.querySelector('.range-audio');
+  var intervalRange = 0;
 
   var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
 
@@ -61,6 +63,8 @@
     })
     //Detecto cuando una canción finaliza 
     audio.addEventListener("ended", function(){
+      range.value = 0;
+      clearInterval(intervalRange)
       nextSong();
     });
 
@@ -77,6 +81,14 @@ $('body').on('click', '.js_play', function () {
   document.querySelector("h3.song-title").innerHTML = $(this).data('title')
   document.querySelector("div.album-art").style.background = "#fff url(content/uploads/"+$(this).data('image')+") center/cover no-repeat"
   audio.play();
+  // Seteo la barra de rango para la duracion total la cancion
+  range.setAttribute('max', $(this).data('duration'));
+  range.value = 0;
+
+  clearInterval(intervalRange)
+  intervalRange = setInterval(setLineRange, 1000);
+  range.disabled = false;
+
   $('body').find('.control-play').data('status', 1);
   document.querySelector("div.control-play").style.background = "transparent url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/pause.svg) center/cover no-repeat"
   document.querySelector("div.vinyl").className = "vinyl vinyl-animate";
@@ -86,11 +98,15 @@ $('body').on('click', '.js_play', function () {
 $('body').on('click', '.control-play', function(){
   if($(this).data('status') == 1){
     $(this).data('status', 0);
-    audio.pause()
+
+    clearInterval(intervalRange);
+    audio.pause();
     this.style.background = "transparent url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/play.svg) center/cover no-repeat"
     document.querySelector("div.vinyl").className = "vinyl";
   } else {
     $(this).data('status', 1);
+
+    intervalRange = setInterval(setLineRange, 1000);
     audio.play()
     this.style.background = "transparent url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/pause.svg) center/cover no-repeat"
     document.querySelector("div.vinyl").className = "vinyl vinyl-animate";
@@ -130,3 +146,18 @@ function prevSong(){
     $("#"+songNowId).click();
   }
 }
+
+range.addEventListener("change", function(){
+  console.log("Dentro "+range.value)
+  if(range.value < 0)
+    audio.currentTime = 0
+  else if(range.value >= audio.duration)
+    audio.currentTime = audio.duration
+  else
+    audio.currentTime = range.value
+})
+
+  function setLineRange(){
+    range.value = parseInt(range.value) +1
+    console.log(range.value)
+  }

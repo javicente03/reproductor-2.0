@@ -82,12 +82,12 @@ try {
 
 // assign system varibles
 $config = $user->get_config();
-if($config[0]['option_value'] != ""){
-    $extension = get_extension($config[0]['option_value']);
+if($config['wallpaper'] != ""){
+    $extension = get_extension($config['wallpaper']);
     if (valid_extension($extension, 'mp4, mkv, flv, avi, mov, wmv')) {
-        $config[0]['type'] = 'video';
+        $config['type_wallpaper'] = 'video';
     } else
-        $config[0]['type'] = 'image';
+        $config['type_wallpaper'] = 'image';
 }
 $smarty->assign('config', $config);
 $smarty->assign('secret', $_SESSION['secret']);

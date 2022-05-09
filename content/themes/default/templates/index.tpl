@@ -46,12 +46,13 @@
         <div id="mp3_player">        
           <canvas id="analyzer_render"></canvas>
           <div id="audio_box"></div>
+          <input type="range" max="100" value="0" disabled class="range-audio">
         </div>
       </div>
     </div>
   </div>
 
-{if $config[0]['option_value'] != "" && $config[0]['type'] == 'video'}
+{if $config['wallpaper'] != "" && $config['type_wallpaper'] == 'video'}
   </div>
   </section>
 {/if}

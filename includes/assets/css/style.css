@@ -660,7 +660,7 @@ body {
   transition: ease 2s;
 }
 
-#file_audio, #file_photo, #file_video {
+.file_audio, .file_photo, .file_video {
  display: none;
 }
 
@@ -890,4 +890,49 @@ div#mp3_player > canvas {
   padding: 15px;
   border-radius: 1em;
   font-weight: bold;
+}
+
+/* ABOUT */
+
+.about {
+  box-shadow: black 4px 5px 13px;
+  width: 60%;
+  padding: 14px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: scroll;
+  height: 510px;
+  overflow-x: hidden;
+}
+
+.about > * {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin:  10px 0;
+}
+
+.about > h2 {
+  font-size: 24px;
+}
+
+.about > p {
+  font-size: 12px;
+}
+
+
+.about > img {
+  max-width: 400px;
+  max-height: 400px;
+  border-radius: 1em;
+}
+
+
+/*Reproductor*/
+
+.range-audio {
+  width: 100%;
 }

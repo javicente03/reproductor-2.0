@@ -1,4 +1,4 @@
-{if $config[0]['option_value'] != "" && $config[0]['type'] == 'video'}
+{if $config['wallpaper'] != "" && $config['type_wallpaper'] == 'video'}
   </div>
   </section>
 {/if}

@@ -86,3 +86,6 @@ RewriteRule ^song/([^/]+)/?$ songs.php?view=$1 [L,QSA]
 
 # Contact
 RewriteRule ^contact/?$ index.php?do=contact [L,QSA]
+
+# Contact
+RewriteRule ^about/?$ index.php?do=about [L,QSA]

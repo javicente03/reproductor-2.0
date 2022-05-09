@@ -31,6 +31,13 @@ try {
                 
                 page_footer('contact');
                 break;
+
+            case 'about':
+                page_header("DoubleSound - About");
+
+                
+                page_footer('about');
+                break;
         }
     }
 

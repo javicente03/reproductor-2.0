@@ -466,7 +466,7 @@ class User
         $get_config = $db->query("SELECT * FROM system_option");
         if($get_config->num_rows > 0){
             while($row = $get_config->fetch_assoc()){
-                $config[] = $row;
+                $config[$row['option_name']] = $row['option_value'];
             }
         }
 
@@ -480,9 +480,24 @@ class User
      * 
      * */
 
-    public function set_config($args = []){
+    public function set_config($args = [], $action){
         global $db;
-        $db->query(sprintf("UPDATE system_option SET option_value = %s WHERE option_name = 'wallpaper'", secure($args['upload']))) or _error('SQL_ERROR_THROWEN');
+
+        switch($action){
+            case 'wallpaper':
+                $db->query(sprintf("UPDATE system_option SET option_value = %s WHERE option_name = 'wallpaper'", secure($args['upload']))) or _error('SQL_ERROR_THROWEN');
+                break;
+
+            case 'about':
+                $db->query(sprintf("UPDATE system_option SET option_value = %s WHERE option_name = 'about_text'", secure($args['about']))) or _error('SQL_ERROR_THROWEN');
+                if($args['upload'] !=""){
+                    $db->query(sprintf("UPDATE system_option SET option_value = %s WHERE option_name = 'about_image'", secure($args['upload']))) or _error('SQL_ERROR_THROWEN');
+                }
+            break;
+
+            default:
+                _error('SQL_ERROR_THROWEN');
+        }
     }
 
 
@@ -568,12 +583,13 @@ class User
     public function addSong($args= []){
         global $db;
 
-        $db->query(sprintf("INSERT INTO songs (song_name, song_album, song_artist, song_duration, song_rut, song_image)
-                            VALUES (%s, %s, %s, %s, %s, %s)", 
+        $db->query(sprintf("INSERT INTO songs (song_name, song_album, song_artist, song_duration, song_duration_second, song_rut, song_image)
+                            VALUES (%s, %s, %s, %s, %s, %s, %s)", 
                             secure($args['name']), 
                             secure($args['album']), 
                             secure($args['artist']), 
                             secure($args['duration']),
+                            secure($args['seconds']),
                             secure($args['music']),
                             secure($args['photo']))) or _error("SQL_ERROR_THROWEN");
     }
