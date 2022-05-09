@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2022 a las 17:59:19
+-- Tiempo de generación: 09-05-2022 a las 23:27:46
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 8.0.13
 
@@ -48,6 +48,7 @@ CREATE TABLE `songs` (
   `song_album` varchar(64) NOT NULL,
   `song_artist` varchar(64) NOT NULL,
   `song_duration` time NOT NULL,
+  `song_duration_second` decimal(30,2) NOT NULL,
   `song_image` varchar(100) NOT NULL,
   `song_rut` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -61,7 +62,7 @@ CREATE TABLE `songs` (
 CREATE TABLE `system_option` (
   `option_id` int(11) NOT NULL,
   `option_name` varchar(64) NOT NULL,
-  `option_value` varchar(256) NOT NULL
+  `option_value` varchar(10000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -69,7 +70,9 @@ CREATE TABLE `system_option` (
 --
 
 INSERT INTO `system_option` (`option_id`, `option_name`, `option_value`) VALUES
-(1, 'wallpaper', '');
+(1, 'wallpaper', 'video/2022/05/DoubleSoundcc823dbd252c4067919bb6cf398aff03.mp4'),
+(2, 'about_text', '(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)'),
+(3, 'about_image', 'photos/2022/05/DoubleSoundac5d592b581627e37a71f87e8e98845b.gif');
 
 -- --------------------------------------------------------
 
@@ -143,7 +146,7 @@ ALTER TABLE `songs`
 -- AUTO_INCREMENT de la tabla `system_option`
 --
 ALTER TABLE `system_option`
-  MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `option_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
