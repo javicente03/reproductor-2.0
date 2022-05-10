@@ -7,15 +7,15 @@
 	<div class="table-container">
 
 		{if $view == "pending"}
-			<h2>Mensajes Pendientes</h2>
+			<h2>Pending Messages</h2>
 
 			<table class="table">
 				<thead>
 					<th>Email</th>
-					<th>Asunto</th>
-					<th>Fecha</th>
-					<th>Ver</th>
-					<th>Marcar Leído</th>
+					<th>Subject</th>
+					<th>Date</th>
+					<th>See</th>
+					<th>Mark as read</th>
 				</thead>
 				<tbody>
 
@@ -32,21 +32,21 @@
 					{else}
 						<tr>
 			                <td colspan="5" class="text-center">
-		                    "No hay mensajes pendientes"
+		                    "There are no pending messages"
 		                    </td>
 		                </tr>
 					{/if}
 				</tbody>
 			</table>
 		{else}
-			<h2>Mensajes Leídos</h2>
+			<h2>Read Messages</h2>
 			<table class="table">
 				<thead>
 					<th>Email</th>
-					<th>Asunto</th>
-					<th>Fecha</th>
-					<th>Ver</th>
-					<th>Eliminar</th>
+					<th>Subject</th>
+					<th>Date</th>
+					<th>See</th>
+					<th>Remove</th>
 				</thead>
 				<tbody>
 				
@@ -63,7 +63,7 @@
 					{else}
 						<tr>
 			                <td colspan="5" class="text-center">
-		                    "No hay mensajes pendientes"
+		                    "There are no pending messages"
 		                    </td>
 		                </tr>
 					{/if}

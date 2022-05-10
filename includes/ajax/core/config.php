@@ -26,7 +26,7 @@ try {
 
 		case 'wallpaper':
 			if(!isset($_POST['upload']) || json_decode($_POST['upload']) =="")
-				return_json(array('error' => true, 'message' => 'Error al procesar'));
+				return_json(array('error' => true, 'message' => 'Error processing'));
 			$_POST['upload'] = json_decode($_POST['upload']);
 			$user->set_config($_POST, $_GET['do']);
 			return_json(array('callback' => 'window.location.reload();'));
@@ -34,7 +34,7 @@ try {
 
 		case 'about':
 			if($_POST['about'] =="")
-				return_json(array('error' => true, 'message' => 'Debe ingresar la descripción'));
+				return_json(array('error' => true, 'message' => 'You must enter the description'));
 
 			$_POST['upload'] = json_decode($_POST['upload']);
 			$user->set_config($_POST, $_GET['do']);

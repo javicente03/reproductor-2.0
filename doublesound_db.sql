@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-05-2022 a las 23:27:46
+-- Tiempo de generación: 10-05-2022 a las 11:03:27
 -- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.0.13
+-- Versión de PHP: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,9 +70,9 @@ CREATE TABLE `system_option` (
 --
 
 INSERT INTO `system_option` (`option_id`, `option_name`, `option_value`) VALUES
-(1, 'wallpaper', 'video/2022/05/DoubleSoundcc823dbd252c4067919bb6cf398aff03.mp4'),
-(2, 'about_text', '(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)(Comience a escribir en la caja del contador de caracteres o copie y pegue su texto.)'),
-(3, 'about_image', 'photos/2022/05/DoubleSoundac5d592b581627e37a71f87e8e98845b.gif');
+(1, 'wallpaper', ''),
+(2, 'about_text', 'Texto About'),
+(3, 'about_image', '');
 
 -- --------------------------------------------------------
 
@@ -95,7 +95,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `user_name`, `user_firstname`, `user_lastname`, `user_email`, `user_password`) VALUES
 (1, 'javicente', 'Javier', 'Gerardo', 'javicentego@gmail.com', '$2y$10$/ZpW2PxHy2eRHCDTVQjWz..yFbuBaQirnBCICgHgo2O7J6TVjEAJC'),
-(2, 'Javier03', 'Vicente', 'Gerardo', 'cocolisos0@gmail.com', '$2y$10$GJa07ufJ9aNnXRxItN0vqOcUNukFa31fhFXsNC5FlF/M5gO0QGGNu');
+(2, 'Javier03', 'Vicente', 'Gerardo', 'cocolisos0@gmail.com', '$2y$10$GJa07ufJ9aNnXRxItN0vqOcUNukFa31fhFXsNC5FlF/M5gO0QGGNu'),
+(3, 'Maryleon', 'Maribel', 'Oliveros', 'cocolisosleon@gmail.com', '$2y$10$xYtTTxE4qwqSnSSV3R/cOubJuKAmewHmIEJYhDllDLHNopW/i84tC');
 
 --
 -- Índices para tablas volcadas
@@ -152,7 +153,7 @@ ALTER TABLE `system_option`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

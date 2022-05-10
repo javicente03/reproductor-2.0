@@ -8,7 +8,12 @@
           <input type="text" name="search" placeholder="Find and listen to your favorate music..."/>
         </form>
       </div>
+
+      {if !$user->_logged_in}
       <div class="account open-modal" data-open="modal1"><img class="avatar" src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/350523/profile/profile-80.jpg?1"/></div>
+      {else}
+      <a href="{$base_url}/dashboard"><div class="account open-modal" data-open="modal1"><img class="avatar" src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/350523/profile/profile-80.jpg?1"/></div></a>
+      {/if}
       <div class="row">
         <h1>Featured Albums</h1>
         {if $playlist}
@@ -24,7 +29,7 @@
               <h3 class="song-title"></h3>
               <div class="music-player-controls">
                 <div class="control-back"></div>
-                <div class="control-play" data-status="0"></div>
+                <div class="control-play"></div>
                 <div class="control-forwards"></div>
               </div>
             </div>
@@ -42,12 +47,7 @@
           {include file='_playlist.tpl'}    
         </div>
 
-        
-        <div id="mp3_player">        
-          <canvas id="analyzer_render"></canvas>
-          <div id="audio_box"></div>
-          <input type="range" max="100" value="0" disabled class="range-audio">
-        </div>
+        {include file='reproductor.tpl'}
       </div>
     </div>
   </div>

@@ -6,13 +6,13 @@
 
 	<div class="right">
 		<div class="mail-box">
-			<span class="subject">Motivo: {$message['message_subject']}</span>
+			<span class="subject">Subject: {$message['message_subject']}</span>
 			{if !$message['message_status']}
-				<button class="js_button-send" data-url="data/contact.php?do=read" data-id="{$message['message_id']}">Marcar Leido</button>
+				<button class="js_button-send" data-url="data/contact.php?do=read" data-id="{$message['message_id']}">Mark as read</button>
 			{else}
-				<button class="js_button-send" data-url="data/contact.php?do=delete" data-id="{$message['message_id']}">Eliminar</button>
+				<button class="js_button-send" data-url="data/contact.php?do=delete" data-id="{$message['message_id']}">Remove</button>
 			{/if}
-			<span class="mail">De: {$message['message_email']}</span>
+			<span class="mail">From: {$message['message_email']}</span>
 			<span class="mail-date">{$message['message_date']}</span>
 
 			<span class="mail-text">{$message['message_text']}</span>

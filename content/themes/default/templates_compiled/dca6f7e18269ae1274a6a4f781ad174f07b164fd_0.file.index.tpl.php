@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.40, created on 2022-05-09 19:09:42
+/* Smarty version 3.1.40, created on 2022-05-10 08:40:52
   from 'C:\xampp\htdocs\reproductor\content\themes\default\templates\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_627966f6623196_37068194',
+  'unifunc' => 'content_627a25145decc4_01776086',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'dca6f7e18269ae1274a6a4f781ad174f07b164fd' => 
     array (
       0 => 'C:\\xampp\\htdocs\\reproductor\\content\\themes\\default\\templates\\index.tpl',
-      1 => 1652123369,
+      1 => 1652172048,
       2 => 'file',
     ),
   ),
@@ -21,12 +21,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:_head_radio.tpl' => 1,
     'file:_menu.tpl' => 1,
     'file:_playlist.tpl' => 1,
+    'file:reproductor.tpl' => 1,
     'file:modal_login.tpl' => 1,
     'file:modal_signup.tpl' => 1,
     'file:_footer_radio.tpl' => 1,
   ),
 ),false)) {
-function content_627966f6623196_37068194 (Smarty_Internal_Template $_smarty_tpl) {
+function content_627a25145decc4_01776086 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:_head_radio.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -39,7 +40,13 @@ $_smarty_tpl->_subTemplateRender('file:_head_radio.tpl', $_smarty_tpl->cache_id,
           <input type="text" name="search" placeholder="Find and listen to your favorate music..."/>
         </form>
       </div>
+
+      <?php if (!$_smarty_tpl->tpl_vars['user']->value->_logged_in) {?>
       <div class="account open-modal" data-open="modal1"><img class="avatar" src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/350523/profile/profile-80.jpg?1"/></div>
+      <?php } else { ?>
+      <a href="<?php echo $_smarty_tpl->tpl_vars['base_url']->value;?>
+/dashboard"><div class="account open-modal" data-open="modal1"><img class="avatar" src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/350523/profile/profile-80.jpg?1"/></div></a>
+      <?php }?>
       <div class="row">
         <h1>Featured Albums</h1>
         <?php if ($_smarty_tpl->tpl_vars['playlist']->value) {?>
@@ -55,7 +62,7 @@ $_smarty_tpl->_subTemplateRender('file:_head_radio.tpl', $_smarty_tpl->cache_id,
               <h3 class="song-title"></h3>
               <div class="music-player-controls">
                 <div class="control-back"></div>
-                <div class="control-play" data-status="0"></div>
+                <div class="control-play"></div>
                 <div class="control-forwards"></div>
               </div>
             </div>
@@ -74,12 +81,8 @@ $_smarty_tpl->_subTemplateRender('file:_head_radio.tpl', $_smarty_tpl->cache_id,
 ?>    
         </div>
 
-        
-        <div id="mp3_player">        
-          <canvas id="analyzer_render"></canvas>
-          <div id="audio_box"></div>
-          <input type="range" max="100" value="0" disabled class="range-audio">
-        </div>
+        <?php $_smarty_tpl->_subTemplateRender('file:reproductor.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
       </div>
     </div>
   </div>

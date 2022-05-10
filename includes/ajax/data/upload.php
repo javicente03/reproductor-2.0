@@ -47,13 +47,13 @@ try {
 
             // valid inputs
             if (!isset($_FILES["file"]) || $_FILES["file"]["error"] != UPLOAD_ERR_OK) {
-                return_json(array('error' => true, 'message' => 'Lo siento, ha ocurrido un error'));
+                return_json(array('error' => true, 'message' => 'Sorry, an error has occurred'));
             }
 
             // check file extesnion
             $extension = get_extension($_FILES['file']['name']);
             if (!valid_extension($extension, 'mp4, mkv, flv, avi, mov, wmv')) {
-                return_json(array('error' => true, 'message' => 'Formato inválido'));
+                return_json(array('error' => true, 'message' => 'Invalid format'));
             }
 
             $prefix = "DoubleSound". get_hash_token();
@@ -75,7 +75,7 @@ try {
                 }
                 /* check if the file uploaded successfully */
                 if (!@move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
-                    return_json(array('error' => true, 'message' => 'Lo siento, no pudo subirse el archivo'));
+                    return_json(array('error' => true, 'message' => 'Sorry, the file could not be uploaded'));
                 }            
             break;
 
@@ -85,13 +85,13 @@ try {
 
             // valid inputs
             if (!isset($_FILES["file"]) || $_FILES["file"]["error"] != UPLOAD_ERR_OK) {
-                return_json(array('error' => true, 'message' => 'Lo siento, ha ocurrido un error'));
+                return_json(array('error' => true, 'message' => 'Sorry, an error has occurred'));
             }
 
             // check file extesnion
             $extension = get_extension($_FILES['file']['name']);
             if (!valid_extension($extension, 'jpg, png, gif')) {
-				return_json(array('error' => true, 'message' => 'Formato inválido'));
+				return_json(array('error' => true, 'message' => 'Invalid format'));
             }
 
 			$prefix = "DoubleSound". get_hash_token();
@@ -113,7 +113,7 @@ try {
                 }
                 /* check if the file uploaded successfully */
                 if (!@move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
-                    return_json(array('error' => true, 'message' => 'Lo siento, no pudo subirse el archivo'));
+                    return_json(array('error' => true, 'message' => 'Sorry, the file could not be uploaded'));
                 }            
 			break;
 
@@ -124,13 +124,13 @@ try {
 
             // valid inputs
             if (!isset($_FILES["file"]) || $_FILES["file"]["error"] != UPLOAD_ERR_OK) {
-                return_json(array('error' => true, 'message' => 'Lo siento, ha ocurrido un error'));
+                return_json(array('error' => true, 'message' => 'Sorry, an error has occurred'));
             }
 
             // check file extesnion
             $extension = get_extension($_FILES['file']['name']);
             if (!valid_extension($extension, 'mp3, wav, ogg')) {
-				return_json(array('error' => true, 'message' => 'Formato inválido'));
+				return_json(array('error' => true, 'message' => 'Invalid format'));
             }
 
             $prefix = "DoubleSound". get_hash_token();
@@ -152,7 +152,7 @@ try {
                 }
                 /* check if the file uploaded successfully */
                 if (!@move_uploaded_file($_FILES['file']['tmp_name'], $path)) {
-                    return_json(array('error' => true, 'message' => 'Lo siento, no pudo subirse el archivo'));
+                    return_json(array('error' => true, 'message' => 'Sorry, the file could not be uploaded'));
                 }
             break;
 	}

@@ -26,23 +26,23 @@ try {
 	switch($_GET['do']){
 		case 'create':
 			if(!isset($_POST['music'])){
-				return_json(array('error' => true, 'message' => 'Debes cargar una canción'));
+				return_json(array('error' => true, 'message' => 'You must upload a song'));
 			} else {
 				$_POST['music'] = json_decode($_POST['music']);
 				if($_POST['music'] == "")
-					return_json(array('error' => true, 'message' => 'Debes cargar una canción'));
+					return_json(array('error' => true, 'message' => 'You must upload a song'));
 			}
 
 			if(!isset($_POST['name']) || trim($_POST['name']) ==""){
-				return_json(array('error' => true, 'message' => 'Debes ingresar el nombre de la canción'));
+				return_json(array('error' => true, 'message' => 'You must enter the name of the song'));
 			}
 
 			if(!isset($_POST['album']) || trim($_POST['album']) ==""){
-				return_json(array('error' => true, 'message' => 'Debes ingresar el nombre del album'));
+				return_json(array('error' => true, 'message' => 'You must enter the name of the album'));
 			}
 
 			if(!isset($_POST['artist']) || trim($_POST['artist']) ==""){
-				return_json(array('error' => true, 'message' => 'Debes ingresar el nombre del artista'));
+				return_json(array('error' => true, 'message' => 'You must enter the name of the artist'));
 			}
 
 			$_POST['photo'] = json_decode($_POST['photo']);
@@ -51,7 +51,7 @@ try {
 			$user->addSong($_POST);
 
 			// return
-			return_json(array('success' => 'console.log("Canción agregada")'));
+			return_json(array('success' => 'console.log("Song added")'));
 			break;
 
 		case 'delete':

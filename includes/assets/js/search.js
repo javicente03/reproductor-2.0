@@ -31,6 +31,7 @@ $(function () {
 						$("#playlist").find('#'+node.id).data('album', e.song_album);
 						$("#playlist").find('#'+node.id).data('artist', e.song_artist);
 						$("#playlist").find('#'+node.id).data('image', e.song_image);
+						$("#playlist").find('#'+node.id).data('duration', e.song_duration_second);
                 	})
                 }
             },
@@ -70,6 +71,7 @@ $(function () {
 						$("#playlist").find('#'+node.id).data('album', e.song_album);
 						$("#playlist").find('#'+node.id).data('artist', e.song_artist);
 						$("#playlist").find('#'+node.id).data('image', e.song_image);
+						$("#playlist").find('#'+node.id).data('duration', e.song_duration_second);
                 	})
                 }
             },

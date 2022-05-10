@@ -10,4 +10,8 @@
     </div>
   {/foreach}
 </div>
+{else}
+<div class="playlist-container playlist-scroll" id="playlist">
+  No information loaded
+</div>
 {/if}
