@@ -10,7 +10,6 @@
   document.getElementById('audio_box').appendChild(audio);
   var range = document.querySelector('.range-audio');
   var volume = document.querySelector('.range-volume');
-  var intervalRange = 0;
 
   var canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
 
@@ -62,9 +61,6 @@
     })
     //Detecto cuando una canción finaliza 
     audio.addEventListener("ended", function(){
-      range.value = 0;
-      // Destruyo el intervalo anterior al terminar la canción
-      clearInterval(intervalRange)
       nextSong();
     });
 
@@ -87,13 +83,7 @@ $('body').on('click', '.js_play', function () {
   document.querySelector("h3.song-title").innerHTML = $(this).data('title')
   document.querySelector("div.album-art").style.background = "#fff url(content/uploads/"+$(this).data('image')+") center/cover no-repeat"
   audio.play();
-  // Seteo la barra de rango para la duracion total la cancion
-  range.setAttribute('max', $(this).data('duration'));
-  range.value = 0;
-
-// Destruyo el intervalo anterior y creo uno nuevo al seleccionar una nueva canción
-  clearInterval(intervalRange)
-  intervalRange = setInterval(setLineRange, 1000);
+  
   range.disabled = false;
 
   document.querySelector("div.control-play").style.background = "transparent url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/pause.svg) center/cover no-repeat"
@@ -105,15 +95,11 @@ $('body').on('click', '.control-play', function(){
     if(go){
       if(!audio.paused){
     
-          // Destruyo el intervalo anterior al pausar la canción
-          clearInterval(intervalRange);
           audio.pause();
           this.style.background = "transparent url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/play.svg) center/cover no-repeat"
           pauseVinylAnimate();
         } else {
     
-          // Creo un nuevo intervalo anterior al dar play
-          intervalRange = setInterval(setLineRange, 1000);
           audio.play()
           this.style.background = "transparent url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/83141/pause.svg) center/cover no-repeat"
           pauseVinylAnimate(true);
@@ -168,10 +154,10 @@ range.addEventListener("change", function(){
     audio.currentTime = range.value
 })
 
-// Actualiza la linea de tiempo cada segundo para seguir la cancion
-  function setLineRange(){
-    range.value = parseInt(range.value) +1
-  }
+audio.ontimeupdate = function(){
+  range.max = audio.duration;
+  range.value = audio.currentTime;
+}
 
 
 // Maneja el volumen de la canción
