@@ -1,4 +1,4 @@
-<div class="right">
+<div class="contact">
 	<h2>Add Song</h2>
 
 	<div class="js_ajax-music-html form-panel" data-url="core/songs.php?do=create">

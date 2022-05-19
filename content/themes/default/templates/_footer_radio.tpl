@@ -1,6 +1,8 @@
-  <!-- Scripts JS -->
-  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<!-- Scripts JS -->
+  <script src='includes/assets/theme_dark/js/jquery.min.js'></script>
+  <script src='includes/assets/theme_dark/js/hls.js'></script>
   <script  src="{$base_url}/includes/assets/js/script.js"></script>
+  <script  src="{$base_url}/includes/assets/js/page.js"></script>
     {include file='_js_files.tpl'}
   <script  src="{$base_url}/includes/assets/js/search.js"></script>
 
@@ -10,10 +12,11 @@
   {/if}
 
   <script>
-    window.onload = function() {
-        document.querySelector('div.center').style.display = "flex"
-        document.querySelector('.loading').style.display = "none" 
-    }
+
+    $(document).ready(function(){
+      document.querySelector('.ready-page').style.visibility = "visible"
+      document.querySelector('#loading-page').style.display = "none"
+    })
   </script>
 </body>
 </html>

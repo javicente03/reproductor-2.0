@@ -92,4 +92,4 @@ if($config['wallpaper'] != ""){
 $smarty->assign('config', $config);
 $smarty->assign('secret', $_SESSION['secret']);
 $smarty->assign('date', $date);
-$smarty->assign('base_url', 'http://localhost/reproductor');
+$smarty->assign('base_url', SYS_URL);

@@ -1,10 +1,9 @@
 {include file='_head_radio.tpl'}
-
-
-<div class="center">
 {include file='_menu_panel.tpl'}
 
-	<div class="right">
+
+<section id="player">
+
 		<div class="mail-box">
 			<span class="subject">Subject: {$message['message_subject']}</span>
 			{if !$message['message_status']}
@@ -17,8 +16,7 @@
 
 			<span class="mail-text">{$message['message_text']}</span>
 		</div>
-	</div>
 
-</div>
+</section>
 
 {include file='_footer.tpl'}

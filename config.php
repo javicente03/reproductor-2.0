@@ -1,7 +1,7 @@
 <?php
 
 /**
- * index
+ * config
  * 
  * @package Sngine
  * @author Zamblek

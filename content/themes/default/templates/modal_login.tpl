@@ -8,9 +8,9 @@
       </button>
     </header>
     <section class="modal-content">
-      <form class="js_ajax-forms form-panel" data-url="core/signin.php" method="POST">
-        <input type="text" name="username_email" class="form-control" placeholder="Username or email">
-        <input type="password" name="password" class="form-control" placeholder="Password">
+      <form class="js_ajax-forms form-panel contact" style="width:100%;" data-url="core/signin.php" method="POST">
+        <input type="text" name="username_email" style="background: #8080806b; font-weight: bold;" placeholder="Username or email">
+        <input type="password" name="password" style="background: #8080806b; font-weight: bold;" placeholder="Password">
        
         <button type="submit">Enter</button>
         <!-- error -->

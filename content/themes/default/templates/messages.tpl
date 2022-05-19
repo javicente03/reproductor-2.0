@@ -1,9 +1,9 @@
 {include file='_head_radio.tpl'}
-
-
-<div class="center">
 {include file='_menu_panel.tpl'}
-	<div class="right">
+
+
+<section id="player">
+	<div class="wrapper">
 	<div class="table-container">
 
 		{if $view == "pending"}
@@ -25,7 +25,7 @@
 								<td>{$row['message_email']}</td>
 								<td>{$row['message_subject']}</td>
 								<td>{$row['message_date']}</td>
-								<td><a href="{$base_url}/messages/{$row['message_id']}"><i class="material-icons">visibility</i></a></td>
+								<td><a href="{$base_url}/messages.php?view={$row['message_id']}"><i class="material-icons">visibility</i></a></td>
 								<td><button class="js_button-send" data-url="data/contact.php?do=read" data-id="{$row['message_id']}"><i class="material-icons">edit</i></button></td>
 							</tr>
 						{/foreach}
@@ -56,7 +56,7 @@
 								<td>{$row['message_email']}</td>
 								<td>{$row['message_subject']}</td>
 								<td>{$row['message_date']}</td>
-								<td><a href="{$base_url}/messages/{$row['message_id']}"><i class="material-icons">visibility</i></a></td>
+								<td><a href="{$base_url}/messages.php?view={$row['message_id']}"><i class="material-icons">visibility</i></a></td>
 								<td><button class="js_button-send" data-url="data/contact.php?do=delete" data-id="{$row['message_id']}"><i class="material-icons">delete</i></button></td>
 							</tr>
 						{/foreach}
@@ -77,6 +77,6 @@
           <!-- error -->
 	</div>
 
-</div>
+</section>
 
 {include file='_footer.tpl'}

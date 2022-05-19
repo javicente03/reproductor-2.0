@@ -33,20 +33,22 @@
 .modal.is-visible {
   visibility: visible;
   opacity: 1;
+  z-index: 999999;
 }
 
 .modal-content {
   display: flex;
-  background: linear-gradient(45deg, #417ece 30%, #e9ffff 100%);
+  background: #0000004f;
   justify-content: center;
 }
 
 .modal-dialog {
   position: relative;
+  min-width: 50%;
   max-width: 800px;
   max-height: 80vh;
   border-radius: 5px;
-  background: var(--white);
+  background: #00000094;
   overflow: auto;
   cursor: default;
 }
@@ -57,7 +59,7 @@
 
 .modal-header,
 .modal-footer {
-  background: var(--lightgray);
+  background: transparent;
 }
 
 .modal-header {
@@ -66,6 +68,7 @@
   justify-content: space-between;
   padding-top: 0;
   padding-bottom: 0;
+  background: ;
 }
 
 .modal-header > h3 {

@@ -97,7 +97,7 @@ $(function (){
             contentType: false,
             success: function(response){
                 if(response.error){
-                    songData.find(".progress_"+type).value = percentComplete;
+                    songData.find(".progress_"+type).val(0);
                     error.html(response.message)
                     error.css('display', "block")
                     setTimeout(function(){

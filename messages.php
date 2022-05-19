@@ -18,6 +18,8 @@ if (!$user->_logged_in) {
 try {
 
     if(is_numeric($_GET['view'])){
+        page_header("DoubleSound - Messages");
+        
         $message = $user->get_message($_GET['view']);
         if(!$message)
             _error(404);

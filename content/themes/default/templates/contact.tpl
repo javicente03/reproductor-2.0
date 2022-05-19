@@ -1,9 +1,8 @@
 {include file='_head_radio.tpl'}
 
-<div class="center">
     {include file='_menu.tpl'}
-
-	<div class="right">
+    <h1>AAAA</h1>
+	<section id="player">
 		<div class="contact">
 			<h2>Contact us</h2>
 
@@ -16,8 +15,7 @@
 				<div class="success-panel">Success</div>
 			</form>
 		</div>
-	</div>	
-</div>
+	</section>
 
 {include file='modal_login.tpl'}
 {include file='modal_signup.tpl'}

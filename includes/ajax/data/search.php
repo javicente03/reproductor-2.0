@@ -1,5 +1,4 @@
 <?php
-
 /**
  * ajax -> core -> signup
  * 
@@ -16,13 +15,12 @@ is_ajax();
 $search = $_POST['search'];
 
 try {
-
 	global $db;
 	$result = [];
 
 	switch($_GET['do']){
 		case 'search':
-			$get_result = $db->query("SELECT *, MATCH(song_name) AGAINST ('$search') AS puntuacion FROM songs WHERE MATCH(song_name) AGAINST ('$search') ORDER BY puntuacion DESC") or _error("SQL_ERROR_THROWEN");
+			$get_result = $db->query(sprintf('SELECT * FROM songs WHERE song_name LIKE %1$s', secure($search, 'search'))) or _error("SQL_ERROR_THROWEN");
 			break;
 
 		case 'all':

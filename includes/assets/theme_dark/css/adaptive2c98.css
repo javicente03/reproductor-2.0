@@ -1,0 +1,260 @@
+@media screen  and (min-width: 1200px) {
+
+    #track .title {
+        font-size: 22px;
+
+    }
+
+    #player {
+        padding-bottom: 50px;
+    }
+
+
+}
+
+
+@media screen  and (max-width: 1030px) {
+
+
+    #station {
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+        background: #2a3642;
+        -webkit-transition: transform .3s;
+        transition: transform .3s;
+        padding-top: 10px;
+        padding-left: 10px;
+        width: 260px;
+    }
+
+    #station.show {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        z-index: 70;
+    }
+
+    ._player #show_station {
+        display: block;
+    }
+
+    ._set-cover-square #controls {
+        bottom: 60px;
+    }
+
+    #player {
+        padding-bottom: 80px;
+        padding-right: 20px;
+    }
+
+    ._set-cover-square #controls {
+        margin-left: 100px;
+    }
+
+
+    #styles .ajax, #genres .ajax, #networks .ajax {
+        height: 50px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    #styles .styles-item, #genres .genres-item, #networks .networks-item {
+        float: none;
+        height: 40px;
+        line-height: 40px;
+        background-color: #00000040;
+
+        border-radius: 4px;
+        padding: 0 20px;
+        margin: 0 10px 0 0;
+    }
+
+    #networks .networks-item {
+        background-position: 20px 50%;
+        padding-left: 50px;
+    }
+
+    #styles .all, #genres .all, #networks .all {
+        height: 40px;
+        line-height: 40px;
+        background-color: #00000040;
+        border-radius: 4px;
+        padding: 0 20px;
+        margin: 0 10px 0 0;
+    }
+
+    #styles .styles-item.visible, #genres .genres-item.visible, #networks .networks-item.visible {
+        display: inline-block !important;
+    }
+
+
+    #styles .styles-item.active, #genres .genres-item.active, #networks .networks-item.active {
+        background-color: #ffffff25;
+        color: #fff;
+    }
+
+}
+
+@media screen  and (max-width: 799px) {
+
+
+    ._black #black {
+        height: 100%;
+        opacity: 1;
+        -webkit-transition: opacity .3s;
+        transition: opacity .3s;
+    }
+
+    #settings, #user, #station {
+        width: 320px;
+    }
+
+    a:hover {
+        color: #fff !important;
+    }
+
+    #logo {
+        /*left: 60px;*/
+    }
+
+    #show_donate {
+        /*left: 140px;*/
+    }
+
+    #list {
+        padding-bottom: 60px;
+    }
+
+    ._player #list .close {
+        display: block;
+    }
+
+    #cp {
+        display: none;
+    }
+
+    #search {
+        width: 250px;
+    }
+
+
+    #player {
+        padding: 60px 10px 90px 10px;
+    }
+
+    #track .title {
+        font-size: 22px;
+        line-height: 30px;
+        height: 60px;
+    }
+
+
+    ._player #show_list {
+        display: block;
+    }
+
+    ._player #list {
+        padding-top: 60px;
+    }
+
+    ._player #fav_mode {
+        top: 10px;
+    }
+
+    ._player #search {
+        top: 10px;
+    }
+
+    ._player #list {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+        background: #2a3642 !important;
+        -webkit-transition: transform .3s;
+        transition: transform .3s;
+    }
+
+    ._player #list.show {
+        width: 320px;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    ._set-cover-square #controls {
+        margin-left: -40px;
+    }
+
+
+    #track .search a {
+        line-height: 40px;
+    }
+
+}
+
+
+@media screen  and (max-width: 799px) and (max-height: 479px) {
+
+
+    #disc {
+        margin: 0;
+    }
+
+
+    #player {
+        padding: 10px 0 60px 0;
+    }
+
+    #disc {
+        float: left;
+        margin: 0 20px 0 10px;
+    }
+
+    #controls, ._set-cover-square #controls {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: auto;
+        right: -170px;
+        margin: 0;
+    }
+
+    #track {
+        margin-right: 10px;
+    }
+
+    #track .station {
+        text-align: left;
+    }
+
+    #track .title {
+        padding-left: 0;
+        text-align: left;
+    }
+}
+
+
+@media screen  and (max-width: 499px) {
+
+
+    .networks-item, #networks .all {
+        margin-bottom: 20px;
+    }
+
+    #player {
+        padding: 60px 10px 60px 10px;
+    }
+
+    #track .title {
+        font-size: 18px;
+        line-height: 20px;
+        height: 40px;
+    }
+
+    #mbnr4web {
+        display: none !important;
+    }
+
+}
+
+#mbnr4web {
+    display: none !important;
+}

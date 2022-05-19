@@ -1,9 +1,8 @@
 {include file='_head_radio.tpl'}
+{include file='_menu.tpl'}
 
-<div class="center">
-    {include file='_menu.tpl'}
+<section id="player">
 
-	<div class="right">
 		<div class="about">
 			<h2>About</h2>
 
@@ -12,10 +11,6 @@
 
 				<img src="{$base_url}/content/uploads/{$config['about_image']}">
 		</div>
-	</div>	
-</div>
-
-{include file='modal_login.tpl'}
-{include file='modal_signup.tpl'}
+</section>
 
 {include file='_footer.tpl'}
